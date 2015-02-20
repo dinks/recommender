@@ -2,6 +2,9 @@
 
 A Simple Recommender
 
+[![Coverage Status](https://coveralls.io/repos/dinks/recommender/badge.svg)](https://coveralls.io/r/dinks/recommender)
+[![Build Status](https://travis-ci.org/dinks/recommender.svg?branch=master)](https://travis-ci.org/dinks/recommender)
+
 ## Installation
 
 Add this line to your application's Gemfile:
