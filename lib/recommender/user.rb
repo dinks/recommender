@@ -8,6 +8,8 @@ module Recommender
       @products = []
     end
 
+    # Add Product to the list
+    #
     def add_product(product_id)
       @products << product_id unless @products.include?(product_id)
     end

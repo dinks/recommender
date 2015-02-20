@@ -8,6 +8,7 @@ module Recommender
   class Engine
     # By Chernoff Bounds, the expected error is O(1/sqrt(MAX_PRODUCT_SAMPLE_SIZE))
     # So for bigger sets, this will be better
+    #
     MAX_USER_SAMPLE_SIZE = 20
     MAX_PRODUCT_SAMPLE_SIZE = 5
     MAX_RECOMMENDATIONS_PER_USER = 2
