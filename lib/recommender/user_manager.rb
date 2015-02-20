@@ -13,6 +13,15 @@ module Recommender
       @@users[user_id]
     end
 
+    def self.recommendations_for(user_id)
+      if current_user = @@users[user_id]
+        other_users = @@users.reject { |key| key == user_id }.values
+        ::Recommender::Engine.new(current_user).product_recommendations(*other_users)
+      else
+        []
+      end
+    end
+
     def self.delete_user(user_id)
       @@users.delete user_id
     end

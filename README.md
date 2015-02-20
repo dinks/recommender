@@ -20,7 +20,16 @@ Or install it yourself as:
 
 ## Usage
 
-TODO
+Add a `User` using
+
+    u = ::Recommender::UserManager.find_or_create_user(1)
+    u.add_product(1)
+    u.add_product(2)
+    u.add_product(3)
+
+Once we have a bunch of `User`s, we could get the recommendations using
+
+    ::Recommender::UserManager.recommendations_for(1) # Array with recommendation
 
 ## Contributing
 

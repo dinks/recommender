@@ -20,6 +20,42 @@ describe ::Recommender::UserManager do
     end
   end
 
+  describe ".recommendations_for" do
+    subject { manager.recommendations_for(user_id) }
+
+    let(:user_id) { 1 }
+
+    let(:current_user) { manager.find_or_create_user(user_id) }
+    let(:user_2) { manager.find_or_create_user(2) }
+    let(:user_3) { manager.find_or_create_user(3) }
+
+    context "with available recommendations" do
+      before do
+        current_user.products = [ 1, 2, 3]
+
+        user_2.products = [ 3, 4, 5]
+        user_3.products = [ 9, 6, 8]
+      end
+
+      it "returns recommendations" do
+        expect(subject).to eq([4, 5])
+      end
+    end
+
+    context "with unavailable recommendations" do
+      before do
+        current_user.products = [ 1, 2, 3]
+
+        user_2.products = [ 8, 4, 5]
+        user_3.products = [ 9, 6, 8]
+      end
+
+      it "returns no recommendations" do
+        expect(subject).to eq([])
+      end
+    end
+  end
+
   describe ".delete_user" do
     subject { manager.delete_user(user_id) }
 
