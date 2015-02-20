@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["dineshvasudevan2003@yahoo.com"]
   spec.summary       = %q{ A recommending system }
   spec.description   = %q{ A simple recommending system }
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/dinks/recommender"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
