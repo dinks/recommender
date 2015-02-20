@@ -9,9 +9,9 @@ module Recommender
     # By Chernoff Bounds, the expected error is O(1/sqrt(MAX_PRODUCT_SAMPLE_SIZE))
     # So for bigger sets, this will be better
     #
-    MAX_USER_SAMPLE_SIZE = 20
-    MAX_PRODUCT_SAMPLE_SIZE = 5
-    MAX_RECOMMENDATIONS_PER_USER = 2
+    MAX_USER_SAMPLE_SIZE                    = 20
+    MAX_PRODUCT_SAMPLE_SIZE                 = 5
+    MAX_RECOMMENDATIONS_PER_USER            = 5
     MIN_RATIO_FOR_RECOMMENDATION_ACCEPTANCE = 0.0
 
     def initialize(user)
@@ -25,9 +25,9 @@ module Recommender
     private
 
     def product_recommendations_with(user)
-      ll = intersection_products_with(user).sample(MAX_RECOMMENDATIONS_PER_USER)
-      if ( ll.length * 1.0 ) / MAX_RECOMMENDATIONS_PER_USER > MIN_RATIO_FOR_RECOMMENDATION_ACCEPTANCE
-        user.products - ll
+      intersection_results = intersection_products_with(user).sample(MAX_RECOMMENDATIONS_PER_USER)
+      if ( intersection_results.length * 1.0 ) / MAX_RECOMMENDATIONS_PER_USER > MIN_RATIO_FOR_RECOMMENDATION_ACCEPTANCE
+        user.products - @user.products
       else
         []
       end

@@ -34,6 +34,14 @@ Once we have a bunch of `User`s, we could get the recommendations using
 
     ::Recommender::UserManager.recommendations_for(1) # Array with recommendation
 
+### Example
+
+In the `example` folder you could find an example for the code.
+
+Run `./start.sh`. This will take the data from `sample.txt` and initialize the application. You could interact with the data using a CLI then.
+
+Use `user USER_ID` and you will get the recommendations for the user with id **USER_ID**
+
 ## Contributing
 
 1. Fork it ( https://github.com/[my-github-username]/recommender/fork )

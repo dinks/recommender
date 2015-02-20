@@ -29,4 +29,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "pry-nav"
   spec.add_development_dependency "factory_girl"
   spec.add_development_dependency "coveralls"
+
+  # Highline for the example
+  spec.add_development_dependency "highline"
 end
